@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <script type="text/javascript" src="simcir.js"></script>
+    <link rel="stylesheet" type="text/css" href="simcir.css" />
+    <script type="text/javascript" src="simcir-basicset.js"></script>
+    <link rel="stylesheet" type="text/css" href="simcir-basicset.css" />
+    <script type="text/javascript" src="simcir-library.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <div class="simcir">
+    <!-- paste here your circuit data -->
+{
+  "width":800,
+  "height":400,
+  "showToolbox":true,
+  "toolbox":[
+    {"type":"In"},
+    {"type":"Out"},
+    {"type":"Joint"},
+    {"type":"DC"},
+    {"type":"LED"},
+    {"type":"PushOff"},
+    {"type":"PushOn"},
+    {"type":"Toggle"},
+    {"type":"BUF"},
+    {"type":"NOT"},
+    {"type":"AND"},
+    {"type":"NAND"},
+    {"type":"OR"},
+    {"type":"NOR"},
+    {"type":"XOR"},
+    {"type":"XNOR"},
+    {"type":"OSC"},
+    {"type":"7seg"},
+    {"type":"16seg"},
+    {"type":"4bit7seg"},
+    {"type":"RotaryEncoder"},
+    {"type":"BusIn"},
+    {"type":"BusOut"},
+    {"type":"RS-FF"},
+    {"type":"JK-FF"},
+    {"type":"T-FF"},
+    {"type":"D-FF"},
+    {"type":"8bitCounter"},
+    {"type":"HalfAdder"},
+    {"type":"FullAdder"},
+    {"type":"4bitAdder"},
+    {"type":"2to4BinaryDecoder"},
+    {"type":"3to8BinaryDecoder"},
+    {"type":"4to16BinaryDecoder"},
+    {"type":"AltFullAdder"},
+    {"type":"Transmitter"},
+    {"type":"Delay"},
+    {"type":"NumSrc"},
+    {"type":"NumDsp"},
+    {"type":"DSO"}
+  ],
+  "devices":[
+    {"type":"AND","id":"dev0","x":152,"y":72,"label":"AND"},
+    {"type":"DC","id":"dev1","x":32,"y":56,"label":"DC"},
+    {"type":"DC","id":"dev2","x":24,"y":112,"label":"DC"},
+    {"type":"Toggle","id":"dev3","x":96,"y":56,"label":"Toggle","state":{"on":false}},
+    {"type":"Toggle","id":"dev4","x":88,"y":112,"label":"Toggle","state":{"on":false}},
+    {"type":"LED","id":"dev5","x":288,"y":112,"label":"LED"}
+  ],
+  "connectors":[
+    {"from":"dev0.in0","to":"dev3.out0"},
+    {"from":"dev0.in1","to":"dev4.out0"},
+    {"from":"dev3.in0","to":"dev1.out0"},
+    {"from":"dev4.in0","to":"dev2.out0"},
+    {"from":"dev5.in0","to":"dev0.out0"}
+  ]
+}
+    </div>
+  </body>
+</html>

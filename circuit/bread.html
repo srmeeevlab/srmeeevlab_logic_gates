@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Breadboard Component Example</title>
+    <style>
+        svg {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Breadboard Component Example</h1>
+    <div id="breadboard-container"></div>
+
+    <script src="simcir.js"></script>
+    <script>
+        // Register Breadboard Component
+        simcir.registerDevice('Breadboard', function() {
+            var device = this;
+            var numConnectors = 30;
+            var connectorRadius = 5;
+            var connectorSpacing = 10;
+            var width = numConnectors * connectorSpacing + 40;
+            var height = 40;
+            
+            device.width = width;
+            device.height = height;
+            
+            device.$ui.append('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="' + width + '" height="' + height + '">' +
+                '<rect x="20" y="0" width="' + (width - 40) + '" height="' + height + '" fill="white" stroke="black" stroke-width="2" />' +
+                '</svg>');
+            
+            for (var i = 0; i < numConnectors; i++) {
+                var x = 30 + i * connectorSpacing;
+                var y = height / 2;
+                
+                device.$ui.append('<circle class="simcir-connector simcir-connector-w" cx="' + x + '" cy="' + y + '" r="' + connectorRadius + '"></circle>');
+                device.$ui.append('<circle class="simcir-connector simcir-connector-e" cx="' + x + '" cy="' + y + '" r="' + connectorRadius + '"></circle>');
+            }
+            
+            device.$ui.on('mousedown', function(event) {
+                event.stopPropagation();
+            });
+            
+            simcir.createSVGElement(device.$ui, 'circle')
+                .attr('class', 'simcir-device-body')
+                .attr('cx', width / 2)
+                .attr('cy', height / 2)
+                .attr('r', height / 2)
+                .appendTo(device.$ui);
+        });
+
+        // Generate Breadboard Component
+        var numRows = 40;
+        var numColumns = 10;
+        var breadboardSvg = generateBreadboardSvg(numRows, numColumns);
+
+        function generateBreadboardSvg(numRows, numColumns) {
+            var svg = '<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="500" height="300">';
+            
+            // Draw breadboard outline
+            svg += '<rect x="50" y="50" width="400" height="200" fill="white" stroke="black" stroke-width="2"/>';
+            
+            // Draw holes on the breadboard
+            var holeRadius = 5;
+            var holeSpacing = 10;
+            var holeOffset = 60;
+            
+            for (var row = 0; row < numRows; row++) {
+                for (var col = 0; col < numColumns; col++) {
+                    var cx = holeOffset + col * holeSpacing;
+                    var cy = holeOffset + row * holeSpacing;
+                    svg += '<circle cx="' + cx + '" cy="' + cy + '" r="' + holeRadius + '" fill="black"/>';
+                }
+            }
+            
+            svg += '</svg>';
+            return svg;
+        }
+        
+        var numRows = 40;
+        var numColumns = 10;
+        var breadboardSvg = generateBreadboardSvg(numRows, numColumns);
+        
+        var breadboardContainer = document.getElementById('breadboard-container');
+        breadboardContainer.innerHTML = breadboardSvg;
+
+        // Render Breadboard SVG
+        var breadboardContainer = document.getElementById('breadboard-container');
+        breadboardContainer.innerHTML = breadboardSvg;
+
+        // Create Circuit
+        var circuit = simcir.create('simcir', 'breadboard-container');
+
+        // Add Breadboard Component to Circuit
+        circuit.addDevice('Breadboard', { x: 100, y: 100 });
+    </script>
+</body>
+</html>

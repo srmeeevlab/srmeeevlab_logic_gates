@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
+    <!-- For iPhone -->
+    <meta name="msapplication-TileColor" content="#4076e0">
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#4076e0">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#4076e0">
+    <title>Virtual Labs</title>
+	<link rel="canonical" href="https://srmeeevlab.github.io/PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/tripleandgate.html" />
+    <link rel="shortcut icon" href="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/images/favicon.ico">
+    <link rel="stylesheet" href="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/css/bootstrap.min.css">
+    <link href="//fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/css/vlabs-style.css">        
+    <script src="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/js/jquery-3.4.1.slim.min.js"></script>
+    <script src="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/js/bootstrap.min.js"></script>
+    <!-- END INCLUDE HEADER AND FOOTER -->
+    <!-- BEGIN INCLUDE MARKDOWN FILES USING ZERO MD JS -->
+    <script src="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/js/webcomponents-loader.min.js"></script>
+    <script>
+      // Set global configs. Declare before importing `zero-md` element.
+      // These settings will apply to all instances of `zero-md`.
+      window.ZeroMd = {
+          config: {
+              // Basically, we want to point all library references to our local ones instead.
+              cssUrls: [ '../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/css/github-markdown.min.css',
+                         'assets/css/vlabs-style.css'
+                       ]
+          }
+      };
+    </script>
+    <script type="module" src="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/js/zero-md.min.js"></script>
+    <!-- END INCLUDE MARKDOWN FILES USING ZERO MD JS -->    
+    <script type="text/javascript" src="circuit/simcir.js"></script>
+    <link rel="stylesheet" type="text/css" href="circuit/simcir.css" />
+    <script type="text/javascript" src="circuit/simcir-basicset.js"></script>
+    <link rel="stylesheet" type="text/css" href="circuit/simcir-basicset.css" />
+    <script type="text/javascript" src="circuit/simcir-library.js"></script>
+    <style>
+      body{
+    background-color: rgb(247, 202, 201) ;
+    width:100%;
+    margin: 0;
+    padding: 0;
+    }
+    .sidebar a{
+   color: #000000;
+   font-family: serif;
+   font-style: normal;
+
+    }
+    .navbar-brand img{
+      border-radius: 20%;
+      /* border: 3px solid #DC143C; */
+      width: 18%;
+      height: 18%;
+    } 
+    </style>
+
+  </head>
+  <body class="p-0 container-fluid vlabs-page d-flex flex-column justify-content-between">
+    <header class="vlabs-header sticky-top shadow z-index-999 " style="background-color:#FFE4C4;">
+      <nav class="p-0 d-flex justify-content-between navbar navbar-expand-lg navbar-light">
+        <a href="https://srmist.edu.in/" class="navbar-brand">
+          <img src="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/images/SRM_Logo.png" alt="SRM logo" />
+        </a>
+        <!-- <a href="http://vlab.co.in/" class="navbar-brand">
+          <img src="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/images/vlabs-color-small-moe.jpg" alt="vlabs logo" />
+        </a> -->
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headerNavbar"
+          aria-controls="headerNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> -->
+      </nav>
+    </header>
+    <div class="container-fluid flex-fill d-flex flex-column vlabs-page-main">
+      <div class="row flex-grow-1 px-4">
+        <div class="nav flex-column col col-sm-3 col-lg-2 sidebar shadow z-index-999" style="background-color: rgb(200, 200, 200); text-align: center;">
+ 
+          <!-- <a href="../../index.html" class="py-2">Aim</a> -->
+          <!-- <a href="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/theory.html" class="py-2">Theory</a> -->
+          <a href="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/tripleandgate.html" class="py-2" style="background-color: darkgray; border-radius: 20px; margin-left: 10px;">Digital Simulator</a>
+          <a href="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/procedure.html" class="py-2">Procedure</a>
+          <a href="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/sample_experiment.html" class="py-2">Sample Experiment</a>  
+          <!-- <a href="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/posttest.html" class="py-2">Post Test</a> -->
+          <a href="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/developers.html" class="py-2">Developers</a>
+          <a href="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/feedback.html" class="py-2">Feedback</a>
+        </div>            
+        <div class="vlabs-page-content col col-sm-7 col-lg-10 pr-5 pb-4">
+          <zero-md src="round-template/experiment/experiment-name.md">
+            <template>
+              <style>
+                div {
+                    font-family: 'Raleway', sans-serif;
+                }
+                h1, h2 { 
+                    margin: 0.5em 0;
+                    color: #2C99CE;
+                    text-align: center;
+                }
+                
+                ::-webkit-scrollbar {
+      
+                  width:10px;
+                  height: 400px;
+                }
+
+                /* Track (the area on which the thumb runs) */
+                ::-webkit-scrollbar-track {
+                  background: #FFE4C4 !important;
+                  
+                }
+
+                /* Handle (the draggable scrolling element) */
+                ::-webkit-scrollbar-thumb {
+                  background: #DC143C;
+                  border-radius: 40%;
+                }
+
+                /* Handle on hover */
+                ::-webkit-scrollbar-thumb:hover {
+                  background: #555;
+                }
+              </style>
+            </template>
+          </zero-md>
+          <!-- <h3 class="page-name" style="color:  #DC143C; font-style: bold;font-family: serif;font-size: 50px;">Triple AND Gate:</h3> -->
+          <div class="simcir" id="circuit-container" style="margin-top:50px; width: 1220px; height:600px; background-color: #000000;" >
+            <div class=" simcir-body" style="border: 2px solid #DC143C !important; width: 1220px; height:600px; "></div>
+            <!-- paste here your circuit data -->
+            {
+              "width":800,
+              "height":400,
+              "showToolbox":true,
+              "toolbox":[
+                {"type":"In"},
+                {"type":"Out"},
+                
+                {"type":"DC"},
+                {"type":"LED"},
+                {"type":"PushOn"},
+                {"type":"PushOff"},
+
+                {"type":"Toggle"},
+                {"type":"BUF"},
+                {"type":"NOT"},
+          
+                {"type":"AND"},
+                {"type":"NAND"},
+                {"type":"OR"},
+                {"type":"NOR"},
+                {"type":"XOR"},
+                {"type":"XNOR"},
+                {"type": "OSC"},               
+                {"type": "7seg"},            
+                {"type": "16seg"},              
+                {"type": "4bit7seg"},          
+                {"type": "RotaryEncoder"},    
+                {"type": "BusIn"},
+                {"type": "BusOut"},       
+
+                {"type": "RS-FF"},             
+                {"type": "JK-FF"},             
+                {"type": "T-FF"},              
+                {"type": "D-FF"},              
+                {"type": "8bitCounter"},       
+                {"type": "HalfAdder"},         
+                {"type": "FullAdder"},         
+                {"type": "4bitAdder"}     
+              ],
+              "devices":[
+                {"type":"Toggle","id":"dev0","x":184,"y":136,"label":"Binary (ON/OFF)","state":{"on":false}},
+                {"type":"Toggle","id":"dev1","x":184,"y":192,"label":"Binary (ON/OFF)","state":{"on":false}},
+                {"type":"Toggle","id":"dev2","x":184,"y":248,"label":"Binary (ON/OFF)","state":{"on":false}},
+                {"type":"LED","id":"dev3","x":600,"y":192,"label":"LED"},
+                {"type":"DC","id":"dev4","x":64,"y":192,"label":"DC"},
+                {"type":"AND","id":"dev5","x":320,"y":160,"label":"AND"},
+                {"type":"AND","id":"dev6","x":432,"y":208,"label":"AND"}
+              ],
+              "connectors":[
+                {"from":"dev0.in0","to":"dev4.out0"},
+                {"from":"dev1.in0","to":"dev4.out0"},
+                {"from":"dev2.in0","to":"dev4.out0"},
+                {"from":"dev3.in0","to":"dev6.out0"},
+                {"from":"dev5.in0","to":"dev0.out0"},
+                {"from":"dev5.in1","to":"dev1.out0"},
+                {"from":"dev6.in0","to":"dev5.out0"},
+                {"from":"dev6.in1","to":"dev2.out0"}
+              ]
+            }
+            </div>
+            <br>
+            <!-- <button onclick="eraseCircuit()"  id="deleteButton" class="btn btn-primary" style="background-color:#DC143C;">Delete Circuit</button> -->
+
+            </div>
+  </div>
+  </div>
+  <footer class="text-light pt-2 vlabs-footer d-flex flex-column sidebar shadow z-index-999" style="background-color:#FFE4C4;">
+    <div class="row text-center">
+      <div class="m-auto py-4 text-center" style='font-family: "Open Sans", sans-serif; '>
+        <!-- <p style="color:#DC143C; font-style: bold; font-weight: bolder; font-family: serif;font-size: 20px; ">
+          We Acknowledge NITK and PALS for extending their support towards successful completion of this experiment</p> -->
+      </div>
+    </div>
+  </footer>
+  <script>
+document.getElementById("deleteButton").addEventListener("click", function() {
+    // Remove all devices from the workspace, except simcir-toolbox and simcir-pin-hole
+    var workspace = document.querySelector('.simcir-workspace');
+    var children = workspace.children;
+    for (var i = 0; i < children.length; i++) {
+        // Check if the child element has the class simcir-toolbox or simcir-pin-hole
+        if (!(children[i].classList.contains('simcir-toolbox') || 
+              children[i].classList.contains('simcir-pin-hole'))) {
+            // If it's not simcir-toolbox or simcir-pin-hole, remove it
+            workspace.removeChild(children[i]);
+        }
+    }
+
+    // Remove all connectors from the workspace
+    var connectors = document.querySelectorAll('.simcir-connector');
+    connectors.forEach(function(connector) {
+        connector.parentNode.removeChild(connector);
+    });
+});
+
+var element = document.evaluate("/html/body/div[1]/div/div[2]/div/div/svg/rect", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+element.style.height = "1108px";
+element.style.width = "600px";
+var element = document.evaluate("/html/body/div[1]/div/div[2]/div/div/svg/g[1]/rect", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+element.style.height = "112px";
+element.style.width = "600px";
+var element= document.evaluate("/html/body/div[1]/div/div[2]/div/div/svg/g[1]/g[1]/g[5]/text", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+element.textContent = "RaisingEdge Clock";
+var element= document.evaluate("/html/body/div[1]/div/div[2]/div/div/svg/g[1]/g[1]/g[6]/text", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+element.textContent = "CallingEdge Clock";
+  </script>
+ 
+
+
+    <script src="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/round-template/experiment/tripleandgate.js"></script>
+    <!-- BEGIN TO TOP -->
+    <a href="javascript:void(0)" class="back-to-top btn-back-to-top"></a>
+    <!-- END TO TOP -->
+    <!-- BEGIN BASE JS -->
+    <script src="assets/plugins/pace/pace.min.js"></script>
+    <script src="assets/plugins/jquery/jquery.min.js"></script>
+    <script src="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <script src="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/nicescroll/nicescroll.min.js"></script>
+    <!-- END BASE JS -->
+    <!-- BEGIN PAGE LEVEL JS -->
+    <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/js/app.js"></script>
+    <script src="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/js/index.js"></script>
+    <!-- END PAGE LEVEL JS -->
+
+  </body>
+</html>

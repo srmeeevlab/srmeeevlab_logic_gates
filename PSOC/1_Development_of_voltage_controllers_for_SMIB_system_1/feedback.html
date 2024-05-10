@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- For iPhone -->
+    <meta name="msapplication-TileColor" content="#4076e0">
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#4076e0">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#4076e0">
+    <title>SRM V-Lab: Feedback</title>
+	<link rel="canonical" href="https://srmeeevlab.github.io/PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/feedback.html" />
+    <link rel="stylesheet" href="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/css/bootstrap.min.css">
+    <link href="//fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/css/vlabs-style.css">
+    <script src="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/js/jquery-3.4.1.slim.min.js"></script>
+    <script src="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/js/bootstrap.min.js"></script>
+    <!-- END INCLUDE HEADER AND FOOTER -->
+    <!-- BEGIN INCLUDE MARKDOWN FILES USING ZERO MD JS -->
+    <script src="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/js/webcomponents-loader.min.js"></script>
+    <script>
+        // Set global configs. Declare before importing `zero-md` element.
+        // These settings will apply to all instances of `zero-md`.
+        window.ZeroMd = {
+            config: {
+                cssUrls: ['../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/css/github-markdown.min.css',
+                    'assets/css/vlabs-style.css'
+                ]
+            }
+        };
+    </script>
+    <script type="module" src="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/js/zero-md.min.js"></script>
+    <style>
+        @media (min-width: 375px) {
+            iframe {
+                height: 1000px;
+                width: 325px;
+            }
+        }
+        @media (min-width:800px) {
+            iframe {
+                height: 1000px;
+                width: 800px;
+            }
+        }
+        body{
+        background-color: rgb(247, 202, 201) ;
+        width:100%;
+        height:100%;
+        margin: 0;
+        padding: 0;
+        }
+        .sidebar a{
+        color: #000000;
+        font-family: serif;
+        font-style: normal;
+        }
+        .navbar-brand img{
+        border-radius: 20%;
+        /* border: 3px solid #DC143C; */
+        width: 18%;
+        height: 18%;
+        } 
+        ::-webkit-scrollbar {
+         width:10px;
+        }
+
+        /* Track (the area on which the thumb runs) */
+        ::-webkit-scrollbar-track {
+        background: #FFE4C4;;
+        }
+
+        /* Handle (the draggable scrolling element) */
+        ::-webkit-scrollbar-thumb {
+        background: #DC143C;
+        border-radius: 20%;
+        height: 50px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+        }
+    </style>
+    <!-- END INCLUDE MARKDOWN FILES USING ZERO MD JS -->
+</head>
+<body class="p-0 container-fluid vlabs-page d-flex flex-column justify-content-between">
+    <header class="vlabs-header sticky-top shadow z-index-999 " style="background-color:#FFE4C4;">
+        <nav class="p-0 navbar navbar-expand-xxl navbar-light">
+            <a href="https://srmist.edu.in/" class="navbar-brand">
+                <img src="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/images/SRM_Logo.png" alt="SRM logo">
+            </a>
+            <b style="color: #337ab7;">
+                <!-- <h1 class="h3 mx-4 mx-md-0" style="display: inline-block;color:  #DC143C; font-style: bold;font-family: serif;font-size: 40px;">Power System Operation and Control Laboratory -->
+            </b>
+            <!-- <a href="http://vlab.co.in/" class="navbar-brand">
+                <img src="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/images/vlabs-color-small-moe.jpg" alt="vlabs logo" />
+              </a> -->
+        </nav>
+    </header>
+    <div class="container-fluid flex-fill d-flex flex-column vlabs-page-main">
+        <div class="row flex-grow-1 px-4">
+            <div class="d-flex flex-column">
+                <div style="width: 15vw; max-width: 190px; min-width: 110px; background-color: rgb(200, 200, 200); text-align: center;"
+                    class="nav flex-column col sidebar collapse show sidebar shadow z-index-999" id="headerNavbar">
+         
+                    <!-- <a href="../../index.html" class="py-2"> Aim </a> -->
+                    <!-- <a href="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/theory.html" class="py-2"> Theory </a> -->
+                    <a href="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/tripleandgate.html" class="py-2"> Digital Simulator </a>
+                    <a href="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/procedure.html" class="py-2"> Procedure </a>
+                    <a href="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/sample_experiment.html" class="py-2">Sample Experiment</a>
+                    <!-- <a href="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/round-template/experiment/simulation/index.html" target="_blank"
+                    class="py-2">Simulation</a> -->
+                    <a href="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/developers.html" class="py-2">Developers</a>
+                    <a href="../../PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/feedback.html" class="py-2">Feedback</a>
+                </div>
+            </div>
+            <div class="vlabs-page-content col col-sm-7 col-lg-10 pr-5 pb-4">
+                <div class="container pt-3 text-center" >
+                    <iframe src="../../EPVw4BDpgXVSzSDNA_ext_iframe.html" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="text-light pt-2 vlabs-footer d-flex flex-column sidebar shadow z-index-999" style="background-color:#FFE4C4;">
+        <div class="row text-center">
+          <div class="m-auto py-4 text-center" style='font-family: "Open Sans", sans-serif; '>
+            <!-- <p style="color:#DC143C; font-style: bold; font-weight: bolder; font-family: serif;font-size: 20px; ">
+              We Acknowledge NITK and PALS for extending their support towards successful completion of this experiment</p> -->
+          </div>
+        </div>
+      </footer>
+    <script>
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (isMobile) {
+            $('#headerNavbar').collapse({
+                show: false
+            })
+        } 
+    </script>
+</body>
+</html>

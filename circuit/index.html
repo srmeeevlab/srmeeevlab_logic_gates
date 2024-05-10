@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <script type="text/javascript" src="simcir.js"></script>
+    <link rel="stylesheet" type="text/css" href="simcir.css" />
+    <script type="text/javascript" src="simcir-basicset.js"></script>
+    <link rel="stylesheet" type="text/css" href="simcir-basicset.css" />
+    <script type="text/javascript" src="simcir-library.js"></script>
+    <title></title>
+  </head>
+  <body>
+
+
+    <div class="simcir">
+      {
+        "width":1200,
+        "height":600,
+        "showToolbox":true,
+        "toolbox":[
+          {"type":"In"},
+          {"type":"Out"},
+          {"type":"Joint"},
+          {"type":"DC"},
+          {"type":"LED","label":"LED(R)"},
+          {"type":"LED","label":"LED(G)","color":"#00ff00"},
+          {"type":"LED","label":"LED(B)","color":"#0000ff"},
+          {"type":"LED","label":"LED(W)","color":"#ffffff"},
+          {"type":"PushOff"},
+          {"type":"PushOn"},
+          {"type":"Toggle"},
+          {"type":"BUF"},
+          {"type":"NOT"},
+          {"type":"AND"},
+          {"type":"AND","numInputs":"3","label":"AND(3in)"},
+          {"type":"AND","numInputs":"4","label":"AND(4in)"},
+          {"type":"AND","numInputs":"5","label":"AND(5in)"},
+          {"type":"AND","numInputs":"6","label":"AND(6in)"},
+          {"type":"NAND"},
+          {"type":"NAND","numInputs":"3","label":"NAND(3in)"},
+          {"type":"OR"},
+          {"type":"OR","numInputs":"3","label":"OR(3in)"},
+          {"type":"OR","numInputs":"4","label":"OR(4in)"},
+          {"type":"OR","numInputs":"5","label":"OR(5in)"},
+          {"type":"OR","numInputs":"6","label":"OR(6in)"},
+          {"type":"NOR"},
+          {"type":"XOR"},
+          {"type":"XOR","numInputs":"3","label":"XOR(3in)"},
+          {"type":"XNOR"},
+          {"type":"OSC","label":"OSC(0.1Hz)","freq":"0.1"},
+          {"type":"OSC","label":"OSC(0.2Hz)","freq":"0.2"},
+          {"type":"OSC","label":"OSC(0.5Hz)","freq":"0.5"},
+          {"type":"OSC","label":"OSC(1Hz)","freq":"1"},
+          {"type":"OSC","label":"OSC(2Hz)","freq":"2"},
+          {"type":"OSC","label":"OSC(5Hz)","freq":"5"},
+          {"type":"OSC","label":"OSC(10Hz)"},
+          {"type":"7seg"},
+          {"type":"16seg"},
+          {"type":"4bit7seg"},
+          {"type":"RotaryEncoder"},
+          {"type":"BusIn"},
+          {"type":"BusOut"},
+          {"type":"BusIn","numOutputs":"4","label":"BusIn4"},
+          {"type":"BusOut","numInputs":"4","label":"BusOut4"},
+          {"type":"SR-Latch"},
+          {"type":"SR-FF"},
+          {"type":"JK-FF"},
+          {"type":"T-FF"},
+          {"type":"D-FF"},
+          {"type":"8bitCounter"},
+          {"type":"HalfAdder"},
+          {"type":"FullAdder"},
+          {"type":"4bitAdder"},
+          {"type":"2to4BinaryDecoder"},
+          {"type":"3to8BinaryDecoder"},
+          {"type":"4to16BinaryDecoder"},
+          {"type":"AltFullAdder"},
+          {"type":"Transmitter"},
+          {"type":"Delay"},
+          {"type":"NumSrc"},
+          {"type":"NumDsp"},
+          {"type":"DSO"},
+          {"type":"ANDIC"},
+          {"type":"Breadboard"}
+        ],
+        "devices":[
+        ],
+        "connectors":[
+        ]
+      }
+      
+    </div>
+
+<script>
+    function generateBreadboardSvg(numRows, numColumns) {
+        var svg = '<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="500" height="300">';
+        
+        // Draw breadboard outline
+        svg += '<rect x="50" y="50" width="400" height="200" fill="white" stroke="black" stroke-width="2"/>';
+        
+        // Draw holes on the breadboard
+        var holeRadius = 5;
+        var holeSpacing = 10;
+        var holeOffset = 60;
+        
+        for (var row = 0; row < numRows; row++) {
+            for (var col = 0; col < numColumns; col++) {
+                var cx = holeOffset + col * holeSpacing;
+                var cy = holeOffset + row * holeSpacing;
+                svg += '<circle cx="' + cx + '" cy="' + cy + '" r="' + holeRadius + '" fill="black"/>';
+            }
+        }
+        
+        svg += '</svg>';
+        return svg;
+    }
+    
+    var numRows = 40;
+    var numColumns = 10;
+    var breadboardSvg = generateBreadboardSvg(numRows, numColumns);
+
+    Simcir.register("Breadboard", function() {
+        return {
+            init: function() {
+                this.width = 500;
+                this.height = 300;
+                this.svg = breadboardSvg;
+            },
+            label: "Breadboard"
+        };
+    });
+
+    Simcir.render($(".simcir"), "Breadboard");
+</script>
+
+
+  </body>
+</html>
