@@ -136,8 +136,8 @@
             <div class=" simcir-body" style="border: 2px solid #DC143C !important; width: 1220px; height:600px; "></div>
             <!-- paste here your circuit data -->
             {
-              "width":800,
-              "height":400,
+              "width":1220,
+              "height":600,
               "showToolbox":true,
               "toolbox":[
                 {"type":"In"},
@@ -145,10 +145,10 @@
                 
                 {"type":"DC"},
                 {"type":"LED"},
-                {"type":"PushOn"},
-                {"type":"PushOff"},
+                {"type":"PushOn", "label": "Rising Edge Clock"},
+                {"type":"PushOff", "label": "Falling Edge Clock"},
 
-                {"type":"Toggle"},
+                {"type":"Toggle", "label":"Binary (ON/OFF)"},
                 {"type":"BUF"},
                 {"type":"NOT"},
           
