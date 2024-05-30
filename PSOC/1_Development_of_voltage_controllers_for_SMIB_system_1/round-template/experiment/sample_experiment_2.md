@@ -1,6 +1,6 @@
 ### Simulation Circuit – OR gate from NAND
 
-![ Simulation Circuit – OR gate from NAND ](/srmeeevlab_logic_gates/PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/images/exp2_a.PNG)
+![ Simulation Circuit – OR gate from NAND ](/srmeeevlab_logic_gates/PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/images/exp2_a.png)
 
 ### Simulation Circuit – AND gate from NAND
 
