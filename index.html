@@ -249,9 +249,34 @@ h3{
         <h3 class="page-name" style="color:  #DC143C; font-style: italic;font-family: serif;font-size: 50px;">Welcome to the Digital Electronics Lab!</h3>
           <div><br><p style="font-size: 20px;">In this laboratory, students will get to explore and learn various concepts regarding Digital Electronics. The platform is developed as open source, so that the student doesn't need to download or install any third-party application. This platform provides a creative and inventive playground for all skill levels, from beginners to seasoned enthusiasts. Prepare to learn more and get more passionate about digital electronics.</p></div>
       </div>
-    
+      <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog  modal-xl" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Google Form</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              
+              <iframe src="https://forms.gle/TyWuU8tj4kKhJtgq8" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
+  <script>
+    $(document).ready(function(){
+      $("#exampleModalLong").modal('show');
+    });
+  </script>
   <footer class="text-light pt-2 vlabs-footer d-flex flex-column sidebar shadow z-index-999" 
           style="background-color:#FFE4C4;">
     <div class="row text-center">
