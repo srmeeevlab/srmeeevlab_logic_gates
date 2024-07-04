@@ -274,32 +274,95 @@ h3{
             </div>
             <div class="modal-body">
               <form class="form-horizontal" id="Form">
+
                 <div id="alertblock" class="alert alert-success p-2" style="display: none;">
                   <strong>Form Submitted!!</strong>
                 </div>
                 <div id="alertblock1" class="alert alert-danger p-2" style="display: none;">
                   <strong>Invalid Credentials!!</strong>
                 </div>
+
+
                 <div class="form-group">
-                  <label class="control-label col-sm-2" for="name">Name:</label>
-                  <div class="col-sm-10">
+                  
+                  <div class="col-10">
+                    <label class="control-label" for="name">Name:</label>
                     <input type="name" class="form-control" id="name" placeholder="Enter name" name="name">
                   </div>
+                
                 </div>
+                
                 <div class="form-group">
-                  <label class="control-label col-sm-2" for="email">Email:</label>
+                  
                   <div class="col-sm-10">
-                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                    <label for="" class="control-label">Profession:</label>
+                  </div>
+                    <div class ="col-sm-10">
+                    <input type="radio" name="Faculty">
+                    <label for="Faculty">Faculty</label>
+                  </div>
+                  <div class="col-sm-10">
+                    <input type="radio" name="Student">
+                    <label for="Student">Student</label>
+                  </div>
+                  <div class="col-sm-10">
+                    <input type="radio" name="Industry">
+                    <label for="Industry">Industry</label>
                   </div>
                 </div>
+
+
                 <div class="form-group">
-                  <label class="control-label col-sm-2" for="pwd">Password:</label>
-                  <div class="col-sm-10">
-                    <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+                  
+                  <div class="col-10">
+                    <label class="control-label" for="college">Name of the College/Institute/Industry<span style="color:red">*</span></label>
+                    <input type="college" class="form-control" id="college" placeholder="Your answer" name="college" required>
                   </div>
                 </div>
+
                 <div class="form-group">
-                  <div class="col-sm-offset-2 col-sm-10">
+                
+                  
+                  <div class="col-10">
+                    <label class="control-label" for="place">Place of the College/Institute/Industry<span style="color:red">*</span></label>
+                    <input type="place" class="form-control" id="place" placeholder="Your answer" name="place" required>
+                  </div>
+                
+                </div>
+
+                <div class="form-group">
+                
+                  
+                  <div class="col-10">
+                    <label class="control-label" for="department">Department<span style="color:red">*</span></label>
+                    <input type="department" class="form-control" id="department" placeholder="Your answer" name="department" required>
+                  </div>
+                
+                </div>
+
+                <div class="form-group">
+                  
+                  <div class="col-10">
+                    <label class="control-label" for="email">Email<span style="color:red">*</span></label>
+                    <input type="email" class="form-control" id="email" placeholder="Your answer" name="email" required>
+                  </div>
+               
+                </div>
+                  
+                <div class="form-group"> 
+                     
+                    <div class="col-10">
+                      <label class="control-label" for="remarks">Remarks(if any)<span style="color:red">*</span></label> 
+                    <br>
+                    <textarea  class="form-control" name="remarks" id="remarks" placeholder="Your answer" required></textarea>
+                  </div>
+                
+                </div>
+                
+                <div class="form-group">
+                  <div class="col-sm-10">
+                     <br>
+                    
                     <button type="submit" class="btn btn-success">Submit</button>
                   </div>
                 </div>

@@ -6,15 +6,15 @@ var form  = document.getElementById("Form");
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyD0t1910jJ2zWqJhzH8U0TY2txzp2etqMI",
-    authDomain: "srmvlabs.firebaseapp.com",
-    projectId: "srmvlabs",
-    storageBucket: "srmvlabs.appspot.com",
-    messagingSenderId: "421429790651",
-    appId: "1:421429790651:web:848fcb49f71245704de69e",
-    measurementId: "G-8V3LBR8YD4"
-  };
-
+  apiKey: "AIzaSyAX9jbwBsppZaBAPtaq2mLrdJRPJ3Id9jM",
+  authDomain: "vlab-logicgates.firebaseapp.com",
+  databaseURL: "https://vlab-logicgates-default-rtdb.firebaseio.com",
+  projectId: "vlab-logicgates",
+  storageBucket: "vlab-logicgates.appspot.com",
+  messagingSenderId: "458308303869",
+  appId: "1:458308303869:web:0b337f2fc66587cc643794",
+  measurementId: "G-SWCVN2WRW7"
+};
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
@@ -27,10 +27,13 @@ form.addEventListener("submit",async(e)=>{
     const alert = document.getElementById("alertblock");
     const name = document.getElementById("name").value;
     const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+    const remarks = document.getElementById('remarks').value;
+    const department = document.getElementById('department').value;
+    const place = document.getElementById('place').value;
+    const college = document.getElementById('college').value;
     const danger = document.getElementById("alertblock1");
     console.log("Form Submitted");
-    console.log(name, email, password);
+    // console.log(name, email, password);
 
     try {
         const colRef = collection(db, 'users');
@@ -64,7 +67,10 @@ form.addEventListener("submit",async(e)=>{
         await addDoc(collection(db, "users"), {
           name: name,
           email: email,
-          password: password
+          department:department,
+          college:college,
+          remarks:remarks,
+          place:place,
         });
         alertblock.style.display = "block";
         setTimeout(() => {
