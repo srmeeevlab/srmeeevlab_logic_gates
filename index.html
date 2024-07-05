@@ -265,24 +265,36 @@ h3{
         <h3 class="page-name" style="color:  #DC143C; font-style: italic;font-family: serif;font-size: 50px;">Welcome to the Digital Electronics Lab!</h3>
           <div><br><p style="font-size: 20px;">In this laboratory, students will get to explore and learn various concepts regarding Digital Electronics. The platform is developed as open source, so that the student doesn't need to download or install any third-party application. This platform provides a creative and inventive playground for all skill levels, from beginners to seasoned enthusiasts. Prepare to learn more and get more passionate about digital electronics.</p></div>
       </div>
-      <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true"> 
+      <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" data-keyboard="false" data-backdrop="static" style="z-index:99999;"> 
         <div class="modal-dialog  modal-xl" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLongTitle">Contact form</h5>
-              
+              <button type="button" id="close_button" class="close" data-dismiss="modal" aria-label="Close" style="display: none;">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" id="Form">
 
                 <div id="alertblock" class="alert alert-success p-2" style="display: none;">
-                  <strong>Form Submitted!!</strong>
+                  <strong>Form Submitted Successfully!</strong>
                 </div>
                 <div id="alertblock1" class="alert alert-danger p-2" style="display: none;">
                   <strong>Invalid Credentials!!</strong>
                 </div>
+                <div id="alertblock2" class="alert alert-success p-2" style="display: none;">
+                  <strong>Email Validation Successful!! You are an existing user</strong>
+                </div>
 
-
+                <div class="form-group">
+                  
+                  <div class="col-10">
+                    <label class="control-label" for="email">Email<span style="color:red">*</span></label>
+                    <input type="email" class="form-control" id="email" placeholder="Your answer" name="email" required>
+                  </div>
+               
+                </div>
                 <div class="form-group">
                   
                   <div class="col-10">
@@ -340,14 +352,7 @@ h3{
                 
                 </div>
 
-                <div class="form-group">
-                  
-                  <div class="col-10">
-                    <label class="control-label" for="email">Email<span style="color:red">*</span></label>
-                    <input type="email" class="form-control" id="email" placeholder="Your answer" name="email" required>
-                  </div>
-               
-                </div>
+                
                   
                 <div class="form-group"> 
                      

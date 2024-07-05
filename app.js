@@ -21,28 +21,9 @@ const firebaseConfig = {
 
   const db = getFirestore(app);
 
-  
-form.addEventListener("submit",async(e)=>{
-    e.preventDefault();
-    const alert = document.getElementById("alertblock");
-    const name = document.getElementById("name").value;
-    const email = document.getElementById('email').value;
-    const remarks = document.getElementById('remarks').value;
-    const department = document.getElementById('department').value;
-    const place = document.getElementById('place').value;
-    const college = document.getElementById('college').value;
-    const danger = document.getElementById("alertblock1");
-    console.log("Form Submitted");
-    // console.log(name, email, password);
-
-    try {
-        const colRef = collection(db, 'users');
-    
-        let emails = [];
-    
-        getDocs(colRef)
-        
-        .then((snapshot)=>{
+  const colRef = collection(db, 'users');
+  let emails = [];
+  getDocs(colRef).then((snapshot)=>{
             // console.log(snapshot.docs);
         
             snapshot.docs.forEach((doc)=>{
@@ -64,7 +45,54 @@ form.addEventListener("submit",async(e)=>{
             console.log(err.message);
         });
 
-        await addDoc(collection(db, "users"), {
+        var entered_email="";
+        document.getElementById("email").addEventListener("keydown", function(event){
+          var key = event.key;
+           //alert("You pressed: " + key);
+           
+           if (key === 'Backspace') {
+            entered_email = entered_email.slice(0, -1);
+            } else if (key.length === 1) { // Ensure it's a single character key
+            entered_email += key;
+            }
+          //  entered_email += key;
+           console.log(entered_email);
+           console.log(emails.includes(entered_email));
+           if(emails.includes(entered_email)){
+            alertblock2.style.display = "block";
+            setTimeout(() => {
+              alertblock2.style.display = "none";
+              
+              $("#exampleModalLong").modal('hide');
+              $('.modal-backdrop').remove();
+              // exampleModalLong.style.display = "none";
+              // document.getElementsByTagName("html").blur ();
+              // exampleModalLong.setAttribute("data-backdrop", "true");
+              console.log (exampleModalLong.getAttribute("data-backdrop"));
+            }, 2000);
+           }
+         });
+        
+
+form.addEventListener("submit",async(e)=>{
+    e.preventDefault();
+    const alert = document.getElementById("alertblock");
+    const name = document.getElementById("name").value;
+    const email = document.getElementById('email').value;
+    const remarks = document.getElementById('remarks').value;
+    const department = document.getElementById('department').value;
+    const place = document.getElementById('place').value;
+    const college = document.getElementById('college').value;
+    const danger = document.getElementById("alertblock1");
+    console.log("Form Submitted");
+    // console.log(name, email, password);
+
+    try {
+        const colRef = collection(db, 'users');
+
+        
+    
+       await addDoc(collection(db, "users"), {
           name: name,
           email: email,
           department:department,
@@ -75,7 +103,17 @@ form.addEventListener("submit",async(e)=>{
         alertblock.style.display = "block";
         setTimeout(() => {
           alertblock.style.display = "none";
+          
+          $("#exampleModalLong").modal('hide');
+          $('.modal-backdrop').remove();
+          // exampleModalLong.style.display = "none";
+          // document.getElementsByTagName("html").blur ();
+          // exampleModalLong.setAttribute("data-backdrop", "true");
+          console.log (exampleModalLong.getAttribute("data-backdrop"));
         }, 2000);
+
+        // exampleModalLong.style.display = "none";
+        // alertblock.style.display = "block";
       } 
       catch (error) {
         alertblock1.style.display = "block";
