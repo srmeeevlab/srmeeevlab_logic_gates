@@ -46,15 +46,37 @@ const firebaseConfig = {
         });
 
         var entered_email="";
+        var emailInput = document.getElementById("email");
+
+        function validateEmail(entered_email) {
+          // Validate and check if entered_email is in the emails list
+          if (emails.includes(entered_email)) {
+            alertblock2.style.display = "block";
+            setTimeout(() => {
+              alertblock2.style.display = "none";
+              $("#exampleModalLong").modal('hide');
+              $('.modal-backdrop').remove();
+            }, 2000);
+          }
+        }
+
+
+         
+        emailInput.addEventListener("input", function(event) {
+          entered_email = emailInput.value;
+          console.log(entered_email);
+          validateEmail(entered_email);
+        });
+
         document.getElementById("email").addEventListener("keydown", function(event){
           var key = event.key;
            //alert("You pressed: " + key);
            
            if (key === 'Backspace') {
             entered_email = entered_email.slice(0, -1);
-            } else if (key.length === 1) { // Ensure it's a single character key
+            } // Ensure it's a single character key
             entered_email += key;
-            }
+            
           //  entered_email += key;
            console.log(entered_email);
            console.log(emails.includes(entered_email));
