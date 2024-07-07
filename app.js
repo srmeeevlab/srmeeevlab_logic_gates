@@ -98,30 +98,18 @@ const firebaseConfig = {
 
 form.addEventListener("submit",async(e)=>{
     e.preventDefault();
-    const alert = document.getElementById("alertblock");
-    const name = document.getElementById("name").value;
-    const email = document.getElementById('email').value;
-    const remarks = document.getElementById('remarks').value;
-    const department = document.getElementById('department').value;
-    const place = document.getElementById('place').value;
-    const college = document.getElementById('college').value;
-    const danger = document.getElementById("alertblock1");
-    console.log("Form Submitted");
+    const formData = new FormData(form);
+    formData.get('')
+    const data = Object.fromEntries(formData);
+    console.log(data)
     // console.log(name, email, password);
-
+                                                
     try {
         const colRef = collection(db, 'users');
 
         
     
-       await addDoc(collection(db, "users"), {
-          name: name,
-          email: email,
-          department:department,
-          college:college,
-          remarks:remarks,
-          place:place,
-        });
+       await addDoc(collection(db, "users"), data);
         alertblock.style.display = "block";
         setTimeout(() => {
           alertblock.style.display = "none";
