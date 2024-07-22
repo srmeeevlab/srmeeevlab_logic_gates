@@ -1,27 +1,24 @@
-
-
 #### The following steps help the user to explore the platform.
 
-#### Step 1: Navigate to the simulator by clicking on "Digital Simulator".	
+#### Step 1: Navigate to the simulator by clicking on "Digital Simulator". Click <a href="#">here</a> for a video demonstration.
 
 ![ procedure for experiment 1 step 1.1 ](/srmeeevlab_logic_gates/PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/images/Digital_Simulator.png)
 
-#### Step 2: Navigate to “Theory” in the drop-down, and read the text for conceptual understanding.
+#### Step 2: In order to construct a circuit, remove the default one as shown below. Click <a href="#">here</a> for a video demonstration.
 
-![ procedure for experiment 1 step 1.2 ](./images/Capture_Exp.1_Basic_Simulator_2.png)
+![ procedure for experiment 1 step 1.2 ](/srmeeevlab_logic_gates/PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/images/Remove_Default.jpeg)
 
-#### Step 3: Navigate back to the interface.
+#### Step 3: Now, choose a desired component from the panel on the right and drag it to the workspace. Click <a href="#">here</a> for a video demonstration.
 
-![ procedure for experiment 1 step 1.3 ](./images/Capture_Exp.1_Basic_Simulator_3.PNG)
+![ procedure for experiment 1 step 1.3 ](/srmeeevlab_logic_gates/PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/images/Add_Component.jpeg)
 
-#### Step 4: Enter the values for the input parameters on the display window.
+#### Step 4: After placing all the desired components on the workspace, connect them using the connections provided. Click <a href="#">here</a> for a video demonstration.
 
-![ procedure for experiment 1 step 1.4 ](./images/Capture_Exp.1_Basic_Simulator_4.PNG)
+![ procedure for experiment 1 step 1.4 ](/srmeeevlab_logic_gates/PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/images/Connection.jpeg)
 
-#### Step 5: Click on the “Run” button. 
+#### Step 5: Click on the “Run” button.
 
 ![ procedure for experiment 1 step 1.5 ](./images/Capture_Exp.1_Basic_Simulator_5.PNG)
-
 
 #### Step 6: Navigate to “Results”.You can view the image provided below to navigate to the “Results” section on the simulator:
 
@@ -67,7 +64,7 @@
 
 ![procedure for experiment 1 step 2.3 ](./images/Capture_Exp.1_Programming_Interface_3.PNG)
 
-#### Step 4: Use the palette provided on the left to navigate to the drag-drop elements/blocks. If required, please refer to the following image: 
+#### Step 4: Use the palette provided on the left to navigate to the drag-drop elements/blocks. If required, please refer to the following image:
 
 ![procedure for experiment 1 step 2.4 ](./images/Capture_Exp.1_Programming_Interface_4.PNG)
 
@@ -88,4 +85,3 @@
 ![procedure for experiment 1 step 2.8 ](./images/Capture_Exp.1_Programming_Interface_8.PNG)
 
 #### Step 9: Verify the result against manual calculations.
-
