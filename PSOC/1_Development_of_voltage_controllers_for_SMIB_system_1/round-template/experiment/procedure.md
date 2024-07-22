@@ -1,10 +1,10 @@
-### Basic Simulator:
 
-#### The user has to provide the input values to run the simulator. The following steps help the user to explore the platform.
 
-#### Step 1: Navigate to the “Help” button and click on it.	
+#### The following steps help the user to explore the platform.
 
-![ procedure for experiment 1 step 1.1 ](./images/Capture_Exp.1_Basic_Simulator_1.PNG)
+#### Step 1: Navigate to the simulator by clicking on "Digital Simulator".	
+
+![ procedure for experiment 1 step 1.1 ](/srmeeevlab_logic_gates/PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/images/Digital_Simulator.png)
 
 #### Step 2: Navigate to “Theory” in the drop-down, and read the text for conceptual understanding.
 
