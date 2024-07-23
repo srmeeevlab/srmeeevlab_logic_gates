@@ -16,15 +16,20 @@
 
 ![ procedure for experiment 1 step 1.4 ](/srmeeevlab_logic_gates/PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/images/Connection.jpeg)
 
-#### Step 5: Click on the “Run” button.
+#### Step 5: In case you have placed an undersired component on the workspace, drag it back to the panel on the right, as shown below. Click <a href="#">here</a> for a video demonstration.
 
-![ procedure for experiment 1 step 1.5 ](./images/Capture_Exp.1_Basic_Simulator_5.PNG)
+![ procedure for experiment 1 step 1.5 ](/srmeeevlab_logic_gates/PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/images/Undersired_Component.jpeg)
+![ procedure for experiment 1 step 1.5 ](/srmeeevlab_logic_gates/PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/images/Remove_Undesired_Component.jpeg)
 
-#### Step 6: Navigate to “Results”.You can view the image provided below to navigate to the “Results” section on the simulator:
+#### Step 6: In order to alter connections, or disconnect a component, click on the connection point of the component, as shown below. Click <a href="#">here</a> for a video demonstration. 
 
-![ procedure for experiment 1 step 1.6 ](./images/Capture_Exp.1_Basic_Simulator_6.PNG)
+![ procedure for experiment 1 step 1.6 ](/srmeeevlab_logic_gates/PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/images/Disconnecting_Component.jpeg)
 
-#### Step 7: Verify the results provided by the simulator against manual calculations.
+#### Step 7: For Windows: Ctrl + Click, for Mac: Cmd + Click, to toggle the view between the JSON data and the live circuit. Click <a href="#">here</a> for a video demonstration.
+
+![ procedure for experiment 1 step 1.7_1 ](/srmeeevlab_logic_gates/PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/images/Toggle_1.jpeg)
+
+![ procedure for experiment 1 step 1.7_2 ](/srmeeevlab_logic_gates/PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/images/Toggle_2.jpeg)
 
 ### The Programming Interface:
 
