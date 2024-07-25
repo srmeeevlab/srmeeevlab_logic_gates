@@ -8,7 +8,7 @@
 
 ![ procedure for experiment 1 step 1.2 ](/srmeeevlab_logic_gates/PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/images/Remove_Default.jpeg)
 
-#### Step 3: Now, choose a desired component from the panel on the right and drag it to the workspace. Click <a href="#">here</a> for a video demonstration.
+#### Step 3: Now, choose a desired component from the panel on the left and drag it to the workspace. Click <a href="#">here</a> for a video demonstration.
 
 ![ procedure for experiment 1 step 1.3 ](/srmeeevlab_logic_gates/PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/images/Add_Component.jpeg)
 
@@ -16,7 +16,7 @@
 
 ![ procedure for experiment 1 step 1.4 ](/srmeeevlab_logic_gates/PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/images/Connection.jpeg)
 
-#### Step 5: In case you have placed an undersired component on the workspace, drag it back to the panel on the right, as shown below. Click <a href="#">here</a> for a video demonstration.
+#### Step 5: In case you have placed an undersired component on the workspace, drag it back to the panel on the left, as shown below. Click <a href="#">here</a> for a video demonstration.
 
 ![ procedure for experiment 1 step 1.5 ](/srmeeevlab_logic_gates/PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/images/Undersired_Component.jpeg)
 ![ procedure for experiment 1 step 1.5 ](/srmeeevlab_logic_gates/PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/images/Remove_Undesired_Component.jpeg)
