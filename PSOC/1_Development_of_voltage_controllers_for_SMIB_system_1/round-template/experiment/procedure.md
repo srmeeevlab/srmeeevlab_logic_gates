@@ -12,7 +12,7 @@
 
 ![ procedure for experiment 1 step 1.3 ](/srmeeevlab_logic_gates/PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/images/Add_Component.jpeg)
 
-#### Step 4: After placing all the desired components on the workspace, connect them using the connections provided. Click <a href="#">here</a> for a video demonstration.
+#### Step 4: After placing all the desired components on the workspace, connect them using the connection points, as per the requirement. Click <a href="#">here</a> for a video demonstration.
 
 ![ procedure for experiment 1 step 1.4 ](/srmeeevlab_logic_gates/PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/images/Connection.jpeg)
 
@@ -25,9 +25,12 @@
 
 ![ procedure for experiment 1 step 1.6 ](/srmeeevlab_logic_gates/PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/images/Disconnecting_Component.jpeg)
 
-#### Step 7: For Windows: Ctrl + Click, for Mac: Cmd + Click, to toggle the view between the JSON data and the live circuit. Click <a href="#">here</a> for a video demonstration.
+#### Step 7: In-order to verify the working of the circuit, try connecting an LED as an output device. If the connections are accurate, the indicator on the LED will become red in color. Click <a href="#">here</a> for a video demonstration.
 
 ![ procedure for experiment 1 step 1.7_1 ](/srmeeevlab_logic_gates/PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/images/Toggle_1.jpeg)
 
-![ procedure for experiment 1 step 1.7_2 ](/srmeeevlab_logic_gates/PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/images/Toggle_2.jpeg)
+
+#### Step 8: As per the truth table, try adjusting the input values and verify the output using the LED. Click <a href="#">here</a> for a video demonstration.
+
+![ procedure for experiment 1 step 1.7_1 ](/srmeeevlab_logic_gates/PSOC/1_Development_of_voltage_controllers_for_SMIB_system_1/assets/images/Truth_Table.png)
 
